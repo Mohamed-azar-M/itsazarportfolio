@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+   
+</head>
+<body>
+    <h1>Factorial Calculator</h1>
+    <figure>
+           <figcaption>      
+            <label for="number">Enter a number:</label>
+            <input type="number" id="number" min="0" placeholder="Enter a number " required>
+    
+      
+            <button onclick="calculateFactorial()">Calculate Factorial</button>
+
+            
+        </figcaption> 
+
+    </figure>
+   
+        <aside>
+            <details>
+                <summary>
+                    <legend>
+                    How do you get the Factorial of Number?
+                    </legend>
+                    <br>
+                </summary>
+              <video width="400" height="200" controls>
+                <!--<source src="Factorial.mp4" type="video/mp4">-->
+                <source src="Factorial.mp4" type="video/mp4">
+
+            </details>
+           
+            <p>
+               Factorial of a positive integer 
+                (number) is the sum of multiplication 
+        of all the integers smaller than that positive integer.
+         For example, factorial of <strong>5</strong> is *<strong> 5* 4 * 3 * 2 * 1 </strong>which &nbsp;
+          equals to 
+         <strong>120</strong>
+            </p>
+       
+           
+        </aside>
+   
+      
+            <div id="result"></div>
+
+      
+    
+
+
+
+
+    <!--Styling Of CSS-->
+
+    <style>
+      
+   
+       body{
+        background: url(calc3.jpg) no-repeat center center fixed;
+        background-size: cover;
+        text-align: center;
+        
+        align-items: center;
+        justify-content: center;
+       }
+
+       figcaption{
+        display: flex;
+            text-align: center;
+            justify-content: center;
+            border: 2rem;
+            letter-spacing: 2px;
+            grid-gap: 2rem;
+            transition: transform .4s;
+            border-radius: 10px;
+            position: relative;
+            left: auto;
+            border-bottom: 70%;
+           
+       
+        
+
+       }
+   
+     h1{
+            font-size: 80px;
+             text-align: center;
+            justify-content: center;
+            font-weight: 400;
+            margin-top: 0%;
+            top: 30%;
+            margin-bottom: 2rem;
+
+        }
+      
+        label{
+            display: flex;
+            font-size: x-large;
+            font-family: inherit;
+            font-weight: 1000;
+
+        }
+        details{
+            cursor: pointer;
+            font-weight: bold;
+        }
+       
+        figcaption{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            border: 2rem;
+            letter-spacing: 2px;
+            grid-gap: 2rem;
+            transition: transform .4s;
+            border-radius: 10px;
+            position: relative;
+            left: auto;
+            border-bottom: 70%;
+            
+           
+        }
+       button {
+        display: flex;
+        text-align: center;
+        background-color: #12f7ff;
+        cursor: pointer;
+   
+    font-weight: 600;
+    letter-spacing: .4px;
+    margin-left: 1.3rem;
+    
+
+        
+       }
+       fieldset{
+        font-size: x-large;
+       }
+      
+        
+
+
+        #result {
+            text-align: center;
+            justify-content: center;
+            font-weight: bolder;
+            
+
+
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        p{
+            font-size: large;
+           color: rgb(209, 40, 68);
+           font-weight:bold;
+           font-style: oblique;
+           font-stretch: wider;
+           opacity: 3;
+        }
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+    <!--Scripting //////-->
+
+    <script>
+        function calculateFactorial() {
+            var numberInput = document.getElementById('number');
+            var resultDiv = document.getElementById('result');
+            
+            var num = parseInt(numberInput.value);
+
+            if (isNaN(num)) {
+                resultDiv.innerHTML = 'Please enter a valid number.';
+                return;
+            }
+
+            if (num < 0) {
+                resultDiv.innerHTML = 'Factorial is not defined for negative numbers.';
+                return;
+            }
+
+            var factorial = 1;
+            for (var i = 2; i <= num; i++) {
+                factorial *= i;
+            }
+
+            resultDiv.innerHTML = 'Factorial of ' + num + ' is: ' + factorial;
+        }
+    </script>
+</body>
+</html>
